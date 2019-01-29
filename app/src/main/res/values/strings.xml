@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Java-Android</string>
+    <string name="app_name" translatable="false">Java-Android</string>
+    <string name="sections_label">Sections</string>
+    <string name="button_geo_genius">Geo Genius</string>
+    <string name="title_activity_geo_genius">GeoGenius</string>
+    <string name="login_title">Log In</string>
+    <string name="user_label">User</string>
+    <string name="password_label">Password</string>
 </resources>
