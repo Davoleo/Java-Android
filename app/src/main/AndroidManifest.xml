@@ -18,8 +18,7 @@
         </activity>
         <activity
                 android:name=".GeoGenius"
-                android:label="@string/title_activity_geo_genius"
-                android:theme="@style/AppTheme.NoActionBar">
+                android:label="@string/title_activity_geo_genius">
         </activity>
     </application>
 
