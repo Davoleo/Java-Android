@@ -13,4 +13,33 @@
             android:layout_height="wrap_content" android:id="@+id/textView"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:gravity="center_horizontal"
             android:textSize="24sp" android:textColor="@color/darkAqua"/>
+    <TextView
+            android:text="@string/user_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/labelUser"
+            tools:layout_marginTop="@dimen/large_line_spacing"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/textboxUser" android:hint="@string/hint_user"/>
+    <TextView
+            android:text="@string/password_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/labelPsw"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_marginTop="@dimen/fab_margin"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/textboxPsw" tools:hint="@string/hint_psw"/>
+    <Button
+            android:text="@string/login_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/buttonLogin"
+            tools:layout_marginTop="@dimen/fab_margin"/>
 </LinearLayout>
