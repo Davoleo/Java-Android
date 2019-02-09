@@ -38,7 +38,7 @@ captures/
 
 # IntelliJ
 *.iml
-.idea
+.idea/
 .idea/tasks.xml
 .idea/assetWizardSettings.xml
 .idea/dictionaries
