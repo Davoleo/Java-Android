@@ -41,5 +41,10 @@
             android:text="@string/login_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/buttonLogin"
-            tools:layout_marginTop="@dimen/fab_margin"/>
+            tools:layout_marginTop="@dimen/fab_margin" android:onClick="onClickLogin"/>
+    <Button
+            android:text="@string/string_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/buttonRegister"
+            android:onClick="onClickRegister"/>
 </LinearLayout>

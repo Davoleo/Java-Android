@@ -7,6 +7,8 @@
     <string name="user_label">User</string>
     <string name="password_label">Password</string>
     <string name="loginTitle">Log In as Student</string>
-    <string name="hint_user">Max 10 alphanumeric chars</string>
+    <string name="hint_user">Max 15 alphanumeric chars</string>
     <string name="hint_psw">At least 8 chars</string>
+    <string name="string_register">Register</string>
+    <string name="credentials_filename">Credentials.txt</string>
 </resources>
