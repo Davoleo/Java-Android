@@ -25,8 +25,13 @@
                 android:label="@string/title_activity_geo_genius_home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
+        </activity>
+        <activity
+                android:name=".sections.Capitals"
+                android:label="@string/title_activity_capitals">
         </activity>
     </application>
 

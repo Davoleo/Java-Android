@@ -13,4 +13,9 @@
     <string name="credentials_filename">Credentials.txt</string>
     <string name="title_activity_geo_genius_home">GeoGeniusHome</string>
     <string name="world_map_desc">World Map</string>
+    <string name="action_capitals">Capitals</string>
+    <string name="action_rivers">Rivers</string>
+    <string name="action_lakes">Lakes</string>
+    <string name="action_monuments">Monuments</string>
+    <string name="title_activity_capitals">Capitals</string>
 </resources>
