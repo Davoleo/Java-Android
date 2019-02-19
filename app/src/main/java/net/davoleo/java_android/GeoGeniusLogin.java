@@ -1,21 +1,22 @@
 package net.davoleo.java_android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import net.davoleo.java_android.util.Utils;
 
 import java.io.*;
 
-public class GeoGenius extends Activity {
+public class GeoGeniusLogin extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_geo_genius);
+        setContentView(R.layout.activity_geo_genius_login);
 
         //loginButton onClick Handler in source code instead of XML file
         /*Button b = findViewById(R.id.buttonLogin);
@@ -28,7 +29,6 @@ public class GeoGenius extends Activity {
         });*/
     }
 
-    //TODO Credentials Validation
     private String[] importCredentials()
     {
         TextView txbUserName = findViewById(R.id.textboxUser);
@@ -37,23 +37,42 @@ public class GeoGenius extends Activity {
         TextView txbPsw = findViewById(R.id.textboxPsw);
         String psw = txbPsw.getText().toString();
 
+        if (userName.length() > 15 && !Utils.isAlphanumeric(userName))
+        {
+            userName = null;
+            Toast.makeText(getApplicationContext(), "Invalid Username", Toast.LENGTH_LONG).show();
+        }
+
+        if (psw.length() < 8)
+        {
+            psw = null;
+            Toast.makeText(getApplicationContext(), "Password must be at least 8 chars long", Toast.LENGTH_LONG).show();
+        }
+
         return new String[] {userName, psw};
     }
 
     public void onClickLogin(View v) throws FileNotFoundException
     {
-        String userName = importCredentials()[0], psw = importCredentials()[0];
+        String userName = importCredentials()[0], psw = importCredentials()[1];
 
-        if (!checkCredentials(userName, psw, false))
-            Toast.makeText(getApplicationContext(), "Wrong credentials!", Toast.LENGTH_LONG).show();
-        else
-            Toast.makeText(getApplicationContext(), "Welcome back " + userName + " :)", Toast.LENGTH_LONG).show();
+        if (userName != null && psw != null) {
+            if (!checkCredentials(userName, psw, false))
+                Toast.makeText(getApplicationContext(), "Wrong credentials!", Toast.LENGTH_LONG).show();
+            else {
+                Intent intent = new Intent(this, GeoGeniusHome.class);
+                Bundle b = new Bundle();
+                b.putString("user", userName);
+                intent.putExtras(b);
+                startActivity(intent);
+            }
+        }
 
     }
 
     public void onClickRegister(View v)
     {
-        String userName = importCredentials()[0], psw = importCredentials()[0];
+        String userName = importCredentials()[0], psw = importCredentials()[1];
 
         try
         {
@@ -63,7 +82,7 @@ public class GeoGenius extends Activity {
             {
                 String credentialsFilename = getApplicationContext().getFilesDir().getPath() + "/" + getString(R.string.credentials_filename);
                 FileWriter writer = new FileWriter(credentialsFilename, true);
-                writer.append(userName + " " + psw + "\n");
+                writer.append(userName).append(" ").append(psw).append("\n");
                 writer.close();
 
                 Toast.makeText(getApplicationContext(), "Account successfully registered. Welcome " + userName + "!", Toast.LENGTH_LONG).show();
@@ -87,8 +106,8 @@ public class GeoGenius extends Activity {
             FileReader reader = new FileReader(credentialsFilename);
             BufferedReader readerBuff = new BufferedReader(reader);
 
-            String readLine = "";
-            String[] accountData = null;
+            String readLine;
+            String[] accountData;
 
             try
             {

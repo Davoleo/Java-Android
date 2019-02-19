@@ -17,8 +17,16 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".GeoGenius"
+                android:name=".GeoGeniusLogin"
                 android:label="@string/title_activity_geo_genius">
+        </activity>
+        <activity
+                android:name=".GeoGeniusHome"
+                android:label="@string/title_activity_geo_genius_home">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
         </activity>
     </application>
 

@@ -11,4 +11,6 @@
     <string name="hint_psw">At least 8 chars</string>
     <string name="string_register">Register</string>
     <string name="credentials_filename">Credentials.txt</string>
+    <string name="title_activity_geo_genius_home">GeoGeniusHome</string>
+    <string name="world_map_desc">World Map</string>
 </resources>

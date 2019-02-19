@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void startGeoGenius(View view)
     {
-        Intent intent = new Intent(this, GeoGenius.class);
+        Intent intent = new Intent(this, GeoGeniusLogin.class);
         startActivity(intent);
     }
 }
