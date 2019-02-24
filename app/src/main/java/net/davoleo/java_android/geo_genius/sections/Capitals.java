@@ -1,7 +1,7 @@
-package net.davoleo.java_android.sections;
+package net.davoleo.java_android.geo_genius.sections;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import net.davoleo.java_android.R;
 
 public class Capitals extends Activity {

@@ -18,4 +18,6 @@
     <string name="action_lakes">Lakes</string>
     <string name="action_monuments">Monuments</string>
     <string name="title_activity_capitals">Capitals</string>
+    <string name="title_activity_rivers">Rivers</string>
+    <string name="capitals">Capitals</string>
 </resources>

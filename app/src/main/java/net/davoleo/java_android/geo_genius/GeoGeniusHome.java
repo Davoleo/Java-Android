@@ -1,4 +1,4 @@
-package net.davoleo.java_android;
+package net.davoleo.java_android.geo_genius;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
-import net.davoleo.java_android.sections.Capitals;
+import net.davoleo.java_android.R;
+import net.davoleo.java_android.geo_genius.sections.Capitals;
 
 public class GeoGeniusHome extends AppCompatActivity {
 
@@ -33,6 +34,7 @@ public class GeoGeniusHome extends AppCompatActivity {
         return true;
     }
 
+    //TODO Single method to create sub-activity for sections
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {

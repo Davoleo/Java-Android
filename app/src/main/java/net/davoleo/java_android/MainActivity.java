@@ -1,9 +1,10 @@
 package net.davoleo.java_android;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import net.davoleo.java_android.geo_genius.GeoGeniusLogin;
 
 public class MainActivity extends AppCompatActivity {
 

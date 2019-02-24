@@ -1,11 +1,12 @@
-package net.davoleo.java_android;
+package net.davoleo.java_android.geo_genius;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import net.davoleo.java_android.R;
 import net.davoleo.java_android.util.Utils;
 
 import java.io.*;
