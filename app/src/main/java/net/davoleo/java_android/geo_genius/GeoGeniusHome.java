@@ -6,11 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 import net.davoleo.java_android.R;
 import net.davoleo.java_android.geo_genius.sections.Capitals;
 
-public class GeoGeniusHome extends AppCompatActivity {
+public class GeoGeniusHome extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
 
     private String user;
 
@@ -24,6 +25,33 @@ public class GeoGeniusHome extends AppCompatActivity {
         Intent i = getIntent();
         user = i.getStringExtra("user");
         Toast.makeText(getApplicationContext(), "Welcome back " + user + " :)", Toast.LENGTH_LONG).show();
+
+        //listener
+        (findViewById(R.id.mapView)).setOnLongClickListener(this);
+        (findViewById(R.id.mapView)).setOnClickListener(this);
+        (findViewById(R.id.imageButton)).setOnLongClickListener(this);
+        (findViewById(R.id.imageButton)).setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View v)
+    {
+        switch (v.getId())
+        {
+            case R.id.mapView:
+                Toast.makeText(getApplicationContext(), "Short Press on the map", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.imageButton:
+                Toast.makeText(getApplicationContext(), "Short Press on the image button", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public boolean onLongClick(View v)
+    {
+        Toast.makeText(getApplicationContext(), "Long Press", Toast.LENGTH_LONG).show();
+        return true;    //if false long clicks call both this and the onClick method
     }
 
     @Override
