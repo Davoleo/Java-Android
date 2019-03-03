@@ -20,4 +20,7 @@
     <string name="title_activity_capitals">Capitals</string>
     <string name="title_activity_rivers">Rivers</string>
     <string name="capitals">Capitals</string>
+    <string name="rivers">Rivers</string>
+    <string name="lakes">Lakes</string>
+    <string name="monuments">Monuments</string>
 </resources>

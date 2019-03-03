@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".geo_genius.sections.Rivers">
+        tools:context=".geo_genius.sections.Rivers" android:gravity="top|center_vertical|center">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" android:id="@+id/textView3" android:layout_weight="1"
+            android:text="@string/rivers" android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
+</LinearLayout>

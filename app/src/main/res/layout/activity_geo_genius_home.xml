@@ -13,11 +13,31 @@
             android:layout_height="204dp" android:layout_alignParentTop="true"
             android:id="@+id/mapView"
             android:contentDescription="@string/world_map_desc" android:layout_alignParentStart="true"/>
-    <ImageButton
-            android:layout_width="105dp"
-            android:layout_height="99dp" app:srcCompat="@drawable/capitals_button"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/mapView" android:id="@+id/imageButton"
-            android:scaleType="fitXY" android:contentDescription="@string/capitals"/>
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="97dp" android:layout_alignParentStart="true"
+            android:orientation="horizontal"
+            android:gravity="top|center" android:layout_alignParentBottom="true" android:layout_marginBottom="266dp">
+        <ImageButton
+                android:layout_width="95dp"
+                android:layout_height="95dp" app:srcCompat="@drawable/capitals_normal"
+                android:id="@+id/buttonCapitals" android:scaleType="centerInside"
+                android:contentDescription="@string/capitals" android:onClick="onSectionButtonClick"/>
+        <ImageButton
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:id="@+id/buttonRivers" android:scaleType="centerInside"
+                android:contentDescription="@string/rivers" android:onClick="onSectionButtonClick"/>
+        <ImageButton
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:id="@+id/buttonLakes" android:scaleType="centerInside"
+                android:contentDescription="@string/lakes" android:onClick="onSectionButtonClick"/>
+        <ImageButton
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:id="@+id/buttonMonuments" android:scaleType="centerInside"
+                android:contentDescription="@string/monuments" android:onClick="onSectionButtonClick"/>
+    </TableRow>
 
 </RelativeLayout>

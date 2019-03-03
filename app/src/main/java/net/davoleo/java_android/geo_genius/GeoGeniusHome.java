@@ -10,8 +10,9 @@ import android.view.View;
 import android.widget.Toast;
 import net.davoleo.java_android.R;
 import net.davoleo.java_android.geo_genius.sections.Capitals;
+import net.davoleo.java_android.geo_genius.sections.Rivers;
 
-public class GeoGeniusHome extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
+public class GeoGeniusHome extends AppCompatActivity implements View.OnLongClickListener {
 
     private String user;
 
@@ -28,23 +29,14 @@ public class GeoGeniusHome extends AppCompatActivity implements View.OnClickList
 
         //listener
         (findViewById(R.id.mapView)).setOnLongClickListener(this);
-        (findViewById(R.id.mapView)).setOnClickListener(this);
-        (findViewById(R.id.imageButton)).setOnLongClickListener(this);
-        (findViewById(R.id.imageButton)).setOnClickListener(this);
+        (findViewById(R.id.buttonCapitals)).setOnLongClickListener(this);
 
     }
 
-    @Override
-    public void onClick(View v)
+    public void onSectionButtonClick(View v)
     {
-        switch (v.getId())
-        {
-            case R.id.mapView:
-                Toast.makeText(getApplicationContext(), "Short Press on the map", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.imageButton:
-                Toast.makeText(getApplicationContext(), "Short Press on the image button", Toast.LENGTH_SHORT).show();
-        }
+        int ID = v.getId();
+        startSection(ID);
     }
 
     @Override
@@ -62,29 +54,39 @@ public class GeoGeniusHome extends AppCompatActivity implements View.OnClickList
         return true;
     }
 
-    //TODO Single method to create sub-activity for sections
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        switch (item.getItemId())
+        int ID = item.getItemId();
+        startSection(ID);
+        return true;
+    }
+
+    private void startSection(int ID)
+    {
+        Bundle b = new Bundle();
+        b.putString("user", user);
+
+        switch (ID)
         {
             case R.id.action_capitals:
-                Intent intent = new Intent(this, Capitals.class);
-                Bundle b = new Bundle();
-                b.putString("user", user);
-                intent.putExtras(b);
-                startActivity(intent);
+            case R.id.buttonCapitals:
+                Intent intentCapitals = new Intent(this, Capitals.class);
+                intentCapitals.putExtras(b);
+                startActivity(intentCapitals);
                 break;
             case R.id.action_rivers:
+            case R.id.buttonRivers:
+                Intent intentRivers = new Intent(this, Rivers.class);
+                intentRivers.putExtras(b);
+                startActivity(intentRivers);
                 break;
             case R.id.action_lakes:
+            case R.id.buttonLakes:
                 break;
             case R.id.action_monuments:
+            case R.id.buttonMonuments:
                 break;
-            default:
-                return super.onOptionsItemSelected(item);
         }
-
-        return true;
     }
 }
