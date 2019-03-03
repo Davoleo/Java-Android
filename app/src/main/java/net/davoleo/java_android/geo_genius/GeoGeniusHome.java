@@ -1,7 +1,13 @@
 package net.davoleo.java_android.geo_genius;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -42,8 +48,35 @@ public class GeoGeniusHome extends AppCompatActivity implements View.OnLongClick
     @Override
     public boolean onLongClick(View v)
     {
-        Toast.makeText(getApplicationContext(), "Long Press", Toast.LENGTH_LONG).show();
+        if (v.getId() != R.id.mapView)
+        {
+            Toast.makeText(getApplicationContext(), "Long Press", Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED)
+            {
+                Toast.makeText(getApplicationContext(), "AREA DENIED!", Toast.LENGTH_SHORT).show();
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.READ_CONTACTS},
+                        0);
+            }
+            else
+            {
+                Cursor contactsIterator = getContentResolver().query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
+
+                while (contactsIterator.moveToNext())
+                {
+                    int colPos = contactsIterator.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME_PRIMARY);
+                    String nextContact = contactsIterator.getString(colPos);
+                    Toast.makeText(getApplicationContext(), nextContact, Toast.LENGTH_SHORT).show();
+                }
+                contactsIterator.close();
+            }
+
+        }
         return true;    //if false long clicks call both this and the onClick method
+
     }
 
     @Override
