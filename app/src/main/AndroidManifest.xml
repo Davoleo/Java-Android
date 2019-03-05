@@ -40,6 +40,8 @@
                 android:name=".geo_genius.sections.Rivers"
                 android:label="@string/title_activity_rivers">
         </activity>
+        <activity android:name=".geo_genius.ActivityContactList">
+        </activity>
     </application>
 
 </manifest>

@@ -51,6 +51,8 @@ public class GeoGeniusHome extends AppCompatActivity implements View.OnLongClick
         if (v.getId() != R.id.mapView)
         {
             Toast.makeText(getApplicationContext(), "Long Press", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, ActivityContactList.class);
+            startActivity(intent);
         }
         else
         {
