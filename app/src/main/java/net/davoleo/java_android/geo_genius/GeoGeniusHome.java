@@ -117,11 +117,10 @@ public class GeoGeniusHome extends AppCompatActivity implements View.OnLongClick
                 startActivity(intentRivers);
                 break;
             case R.id.action_lakes:
-            case R.id.buttonLakes:
                 break;
             case R.id.action_monuments:
-            case R.id.buttonMonuments:
                 break;
+
         }
     }
 }

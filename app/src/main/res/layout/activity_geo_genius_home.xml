@@ -27,17 +27,8 @@
                 android:layout_width="95dp"
                 android:layout_height="95dp"
                 android:id="@+id/buttonRivers" android:scaleType="centerInside"
-                android:contentDescription="@string/rivers" android:onClick="onSectionButtonClick"/>
-        <ImageButton
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:id="@+id/buttonLakes" android:scaleType="centerInside"
-                android:contentDescription="@string/lakes" android:onClick="onSectionButtonClick"/>
-        <ImageButton
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:id="@+id/buttonMonuments" android:scaleType="centerInside"
-                android:contentDescription="@string/monuments" android:onClick="onSectionButtonClick"/>
+                android:contentDescription="@string/monuments" android:onClick="onSectionButtonClick"
+        />
     </TableRow>
 
 </RelativeLayout>
