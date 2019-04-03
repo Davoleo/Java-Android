@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import net.davoleo.java_android.geo_genius.GeoGeniusLogin;
 import net.davoleo.java_android.movie_player.ActivityMoviePlayer;
+import net.davoleo.java_android.randomizer.Randomizer;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +26,12 @@ public class MainActivity extends AppCompatActivity {
     public void startMoviePlayer(View view)
     {
         Intent intent = new Intent(this, ActivityMoviePlayer.class);
+        startActivity(intent);
+    }
+
+    public void startRandomizer(View view)
+    {
+        Intent intent = new Intent(this, Randomizer.class);
         startActivity(intent);
     }
 }
