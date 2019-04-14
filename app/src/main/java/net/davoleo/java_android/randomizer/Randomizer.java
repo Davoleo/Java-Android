@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 import net.davoleo.java_android.R;
+import net.davoleo.java_android.util.Utils;
 
 import java.util.Random;
 
@@ -29,7 +30,12 @@ public class Randomizer extends AppCompatActivity  implements View.OnClickListen
         {
             int color = getRandomColor();
             v.setBackgroundColor(color);
-            ((TextView)findViewById(R.id.color_code)).setText("#" + Integer.toHexString(Color.red(color)) + Integer.toHexString(Color.green(color)) + Integer.toHexString(Color.blue(color)));
+
+            String r = Integer.toHexString(Color.red(color));
+            String g = Integer.toHexString(Color.green(color));
+            String b = Integer.toHexString(Color.blue(color));
+
+            ((TextView)findViewById(R.id.color_code)).setText("#" + Utils.pad(r, '0', 2) + Utils.pad(g, '0', 2) + Utils.pad(b, '0', 2));
         }
     }
 

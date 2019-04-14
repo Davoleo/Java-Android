@@ -24,4 +24,20 @@ public class Utils {
         return result;
     }
 
+    public static String pad(final String numberToPad, char padChar, int charsNum)
+    {
+        if (numberToPad.length() < charsNum)
+        {
+            int paddingLength = charsNum - numberToPad.length();
+
+            StringBuilder padding = new StringBuilder("" + padChar);
+            for (int i = 1; i < paddingLength; i++)
+                padding.append(padChar);
+
+            return padding + numberToPad;
+        }
+        else
+            return numberToPad;
+    }
+
 }
