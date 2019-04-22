@@ -28,4 +28,8 @@
     <string name="movie_title">Movie Title</string>
     <string name="duration">Duration</string>
     <string name="label_randomizer">Randomizer</string>
+    <string name="button_generate">Generate</string>
+    <string name="rand_category_color">Color Code</string>
+    <string name="rand_category_numbers">Number Randomizer</string>
+    <string name="upper_bound_hint">Upper Bound</string>
 </resources>

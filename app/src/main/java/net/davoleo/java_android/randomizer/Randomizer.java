@@ -45,6 +45,26 @@ public class Randomizer extends AppCompatActivity  implements View.OnClickListen
         return false;
     }
 
+    public void generateRandomNumber(View view)
+    {
+            System.out.println("Ho riconosciuto il bottone");
+            Random rand = new Random();
+            int upperBound;
+
+            try {
+                upperBound = Integer.parseInt(((TextView) findViewById(R.id.upperBoundTxb)).getText().toString());
+            }
+            catch (IllegalArgumentException e) {
+                System.out.println("Error: Invalid Number");
+                return;
+            }
+
+            int generatedNumber = (rand.nextInt(upperBound) + 1);
+
+            TextView label = findViewById(R.id.genNumberLbl);
+            label.setText(generatedNumber);
+    }
+
     private int getRandomColor()
     {
         Random rand = new Random();
