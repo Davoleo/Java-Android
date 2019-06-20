@@ -14,7 +14,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".randomizer.Randomizer">
+        <activity android:name=".randomizer.Randomizer" android:screenOrientation="portrait">
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -45,8 +45,6 @@
                 android:label="@string/title_activity_rivers">
         </activity>
         <activity android:name=".geo_genius.ActivityContactList">
-        </activity>
-        <activity android:name=".movie_player.ActivityMoviePlayer">
         </activity>
     </application>
 

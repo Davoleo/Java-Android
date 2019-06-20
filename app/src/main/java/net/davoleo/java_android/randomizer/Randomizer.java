@@ -1,5 +1,7 @@
 package net.davoleo.java_android.randomizer;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +13,9 @@ import net.davoleo.java_android.util.Utils;
 import java.util.Random;
 
 public class Randomizer extends AppCompatActivity  implements View.OnClickListener, View.OnLongClickListener {
+
+    private int generatedNum = 0;
+    private String generatedColor = "#000000";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -34,6 +39,8 @@ public class Randomizer extends AppCompatActivity  implements View.OnClickListen
             String r = Integer.toHexString(Color.red(color));
             String g = Integer.toHexString(Color.green(color));
             String b = Integer.toHexString(Color.blue(color));
+
+            generatedColor = "#" + Utils.pad(r, '0', 2) + Utils.pad(g, '0', 2) + Utils.pad(b, '0', 2);
 
             ((TextView)findViewById(R.id.color_code)).setText("#" + Utils.pad(r, '0', 2) + Utils.pad(g, '0', 2) + Utils.pad(b, '0', 2));
         }
@@ -60,9 +67,27 @@ public class Randomizer extends AppCompatActivity  implements View.OnClickListen
             }
 
             int generatedNumber = (rand.nextInt(upperBound) + 1);
+            this.generatedNum = generatedNumber;
 
-            TextView label = findViewById(R.id.genNumberLbl);
-            label.setText(generatedNumber);
+            TextView label = findViewById(R.id.genNumLbl);
+            label.setText(Integer.toString(generatedNumber));
+    }
+
+    public void copy(View view)
+    {
+        final ClipboardManager clipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+
+        if (view.getId() == R.id.buttonCopyNumber)
+        {
+            ClipData clipData = ClipData.newPlainText("randomNum", Integer.toString(generatedNum));
+            clipboardManager.setPrimaryClip(clipData);
+
+        } else if (view.getId() == R.id.buttonCopyColor)
+        {
+            //FIXME completely broken :CC
+            ClipData clipData = ClipData.newPlainText("randomColor", generatedColor);
+            clipboardManager.setPrimaryClip(clipData);
+        }
     }
 
     private int getRandomColor()

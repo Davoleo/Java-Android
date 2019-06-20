@@ -5,8 +5,23 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".randomizer.Randomizer">
+        tools:context=".randomizer.Randomizer" android:orientation="vertical">
 
+    <Button
+            android:text="@string/rand_copy_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonCopyColor" android:layout_marginStart="36dp"
+            app:layout_constraintStart_toEndOf="@+id/buttonCopyNumber" android:layout_marginTop="112dp"
+            app:layout_constraintTop_toBottomOf="@+id/buttonGen" android:onClick="copy"/>
+    <TextView
+            android:text="@string/rand_category_colors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/categoryColorGen" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="428dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="24dp"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"/>
     <Button
             android:layout_width="373dp"
             android:layout_height="167dp"
@@ -20,7 +35,7 @@
             android:id="@+id/color_code"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="24dp"
-            android:textAppearance="@android:style/TextAppearance.DeviceDefault.WindowTitle"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:text="@string/rand_category_color" android:layout_marginBottom="52dp"
             app:layout_constraintBottom_toTopOf="@+id/colorButton"/>
     <EditText
@@ -32,20 +47,13 @@
             android:hint="@string/upper_bound_hint" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="24dp"
             android:layout_marginTop="75dp" app:layout_constraintTop_toTopOf="parent"/>
-    <Button
-            android:text="@string/button_generate"
-            android:layout_width="95dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/buttonGenNum" android:layout_marginStart="32dp"
-            app:layout_constraintStart_toEndOf="@+id/upperBoundTxb" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="72dp" android:onClick="generateRandomNumber"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Title" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="84dp" app:layout_constraintStart_toEndOf="@+id/buttonGenNum"
-            android:layout_marginStart="41dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="56dp" android:id="@+id/genNumberLbl"/>
+            android:layout_marginTop="84dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="56dp" android:id="@+id/genNumLbl"/>
     <TextView
             android:text="@string/rand_category_numbers"
             android:layout_width="wrap_content"
@@ -54,4 +62,18 @@
             android:layout_marginTop="16dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="16dp"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"/>
+    <Button
+            android:text="@string/button_generate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonGen" android:layout_marginStart="25dp"
+            app:layout_constraintStart_toEndOf="@+id/upperBoundTxb" android:layout_marginTop="26dp"
+            app:layout_constraintTop_toBottomOf="@+id/categoryNumGen" android:onClick="generateRandomNumber"/>
+    <Button
+            android:text="@string/rand_copy_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonCopyNumber" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp" android:layout_marginTop="114dp"
+            app:layout_constraintTop_toBottomOf="@+id/upperBoundTxb" android:onClick="copy"/>
 </android.support.constraint.ConstraintLayout>
