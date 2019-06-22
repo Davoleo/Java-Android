@@ -82,9 +82,10 @@ public class Randomizer extends AppCompatActivity  implements View.OnClickListen
             ClipData clipData = ClipData.newPlainText("randomNum", Integer.toString(generatedNum));
             clipboardManager.setPrimaryClip(clipData);
 
-        } else if (view.getId() == R.id.buttonCopyColor)
+        }
+
+        if (view.getId() == R.id.buttonCopyColor)
         {
-            //FIXME completely broken :CC
             ClipData clipData = ClipData.newPlainText("randomColor", generatedColor);
             clipboardManager.setPrimaryClip(clipData);
         }
