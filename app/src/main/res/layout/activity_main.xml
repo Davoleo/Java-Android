@@ -14,10 +14,16 @@
     <Button
             android:text="@string/button_geo_genius"
             android:layout_width="match_parent"
-            android:layout_height="63dp" android:id="@+id/button" android:onClick="startGeoGenius"/>
+            android:layout_height="63dp" android:id="@+id/button" android:onClick="startGeoGenius"
+    />
     <Button
             android:layout_width="match_parent"
             android:layout_height="63dp" android:id="@+id/button3" android:onClick="startRandomizer"
             android:text="@string/label_randomizer"/>
+    <TextView
+            android:text="Hello World!"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView4"
+            android:textAlignment="center"/>
 
 </LinearLayout>
