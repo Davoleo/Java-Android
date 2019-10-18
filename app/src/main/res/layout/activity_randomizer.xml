@@ -11,24 +11,26 @@
             android:text="@string/rand_copy_color"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonCopyColor" android:layout_marginStart="36dp"
-            app:layout_constraintStart_toEndOf="@+id/buttonCopyNumber" android:layout_marginTop="92dp"
-            app:layout_constraintTop_toBottomOf="@+id/buttonGen" android:onClick="copy"/>
+            android:id="@+id/buttonCopyColor"
+            android:onClick="copy" android:layout_marginStart="24dp"
+            app:layout_constraintStart_toEndOf="@+id/buttonCopyNumber"
+            app:layout_constraintBaseline_toBaselineOf="@+id/buttonCopyNumber"/>
     <TextView
             android:text="@string/rand_category_colors"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:id="@+id/categoryColorGen" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="368dp" app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/categoryColorGen"
+            app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="16dp"
-            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"/>
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:layout_marginTop="40dp" app:layout_constraintTop_toBottomOf="@+id/buttonCopyNumber"/>
     <Button
-            android:layout_width="373dp"
-            android:layout_height="167dp"
+            android:layout_height="240dp"
             android:id="@+id/colorButton" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginBottom="92dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.363"
-    />
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintHorizontal_bias="0.363"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/color_code"
+            android:layout_width="match_parent"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,24 +38,25 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="16dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            android:text="@string/rand_category_color" android:layout_marginBottom="12dp"
-            app:layout_constraintBottom_toTopOf="@+id/colorButton"/>
+            android:text="@string/rand_category_color"
+            android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/categoryColorGen"/>
     <EditText
-            android:layout_width="112dp"
-            android:layout_height="wrap_content"
+            android:layout_width="97dp"
+            android:layout_height="41dp"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/upperBoundTxb"
             android:hint="@string/upper_bound_hint" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="75dp" app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_marginTop="24dp" app:layout_constraintTop_toBottomOf="@+id/categoryNumGen"/>
     <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="84dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="56dp" android:id="@+id/genNumLbl"/>
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:id="@+id/genNumLbl"
+            app:layout_constraintBaseline_toBaselineOf="@+id/buttonGen" android:layout_marginStart="24dp"
+            app:layout_constraintStart_toEndOf="@+id/buttonGen" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"/>
     <TextView
             android:text="@string/rand_category_numbers"
             android:layout_width="wrap_content"
@@ -65,15 +68,17 @@
     <Button
             android:text="@string/button_generate"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/buttonGen" android:layout_marginStart="25dp"
-            app:layout_constraintStart_toEndOf="@+id/upperBoundTxb" android:layout_marginTop="26dp"
-            app:layout_constraintTop_toBottomOf="@+id/categoryNumGen" android:onClick="generateRandomNumber"/>
+            android:layout_height="43dp"
+            android:id="@+id/buttonGen" android:layout_marginStart="24dp"
+            app:layout_constraintStart_toEndOf="@+id/upperBoundTxb"
+            android:onClick="generateRandomNumber" android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/categoryNumGen"/>
     <Button
             android:text="@string/rand_copy_num"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="124dp"
+            android:layout_height="44dp"
             android:id="@+id/buttonCopyNumber" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="24dp" android:layout_marginTop="92dp"
-            app:layout_constraintTop_toBottomOf="@+id/upperBoundTxb" android:onClick="copy"/>
+            android:layout_marginStart="32dp"
+            android:onClick="copy" android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/upperBoundTxb"/>
 </android.support.constraint.ConstraintLayout>
