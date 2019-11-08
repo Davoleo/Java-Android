@@ -6,7 +6,7 @@
     <string name="login_title">Log In</string>
     <string name="user_label">User</string>
     <string name="password_label">Password</string>
-    <string name="loginTitle">Log In as Student</string>
+    <string name="loginTitle">Log In</string>
     <string name="hint_user">Max 15 alphanumeric chars</string>
     <string name="hint_psw">At least 8 chars</string>
     <string name="string_register">Register</string>

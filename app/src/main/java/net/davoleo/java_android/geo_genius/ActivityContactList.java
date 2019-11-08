@@ -40,6 +40,6 @@ public class ActivityContactList extends AppCompatActivity implements AdapterVie
     {
         String contact = (String) parent.getItemAtPosition(position);
 
-        Toast.makeText(getApplicationContext(), "Index: " + position + " Contact: " + id, Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Index: " + position + " Contact: " + contact, Toast.LENGTH_LONG).show();
     }
 }

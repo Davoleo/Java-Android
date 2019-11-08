@@ -62,9 +62,7 @@ public class GeoGeniusLogin extends Activity {
                 Toast.makeText(getApplicationContext(), "Wrong credentials!", Toast.LENGTH_LONG).show();
             else {
                 Intent intent = new Intent(this, GeoGeniusHome.class);
-                Bundle b = new Bundle();
-                b.putString("user", userName);
-                intent.putExtras(b);
+                intent.putExtra("user", userName);
                 startActivity(intent);
             }
         }
@@ -87,6 +85,8 @@ public class GeoGeniusLogin extends Activity {
                 writer.close();
 
                 Toast.makeText(getApplicationContext(), "Account successfully registered. Welcome " + userName + "!", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this, GeoGeniusHome.class);
+                startActivity(intent);
             }
         }
         catch (IOException e)
