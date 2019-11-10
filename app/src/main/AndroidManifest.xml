@@ -25,11 +25,13 @@
         </activity>
         <activity
                 android:name=".geo_genius.GeoGeniusLogin"
-                android:label="@string/title_activity_geo_genius">
+                android:label="@string/title_activity_geo_genius"
+                android:parentActivityName=".MainActivity">
         </activity>
         <activity
                 android:name=".geo_genius.GeoGeniusHome"
-                android:label="@string/title_activity_geo_genius_home">
+                android:label="@string/title_activity_geo_genius_home"
+                android:parentActivityName=".MainActivity"><!-- Sets the Activity the back button on the appBar points to -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
