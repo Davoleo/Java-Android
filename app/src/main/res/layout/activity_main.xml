@@ -14,12 +14,18 @@
     <Button
             android:text="@string/button_geo_genius"
             android:layout_width="match_parent"
-            android:layout_height="63dp" android:id="@+id/button" android:onClick="startGeoGenius"
+            android:layout_height="63dp" android:id="@+id/button_geogenius" android:onClick="startGeoGenius"
     />
     <Button
             android:layout_width="match_parent"
-            android:layout_height="63dp" android:id="@+id/button3" android:onClick="startRandomizer"
-            android:text="@string/label_randomizer"/>
+            android:layout_height="63dp" android:id="@+id/button_randomizer" android:onClick="startRandomizer"
+            android:text="@string/label_randomizer"
+    />
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="63dp" android:id="@+id/button_fragment" android:onClick="startFragmentTest"
+            android:text="@string/fragment_activity_title"
+    />
     <TextView
             android:text="Hello World!"
             android:layout_width="match_parent"

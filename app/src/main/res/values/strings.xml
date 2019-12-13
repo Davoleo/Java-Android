@@ -35,4 +35,5 @@
     <string name="rand_category_colors">Random Color Generator</string>
     <string name="rand_copy_num">Copy Number</string>
     <string name="rand_copy_color">Copy Color Code</string>
+    <string name="fragment_activity_title">Fragment Test</string>
 </resources>

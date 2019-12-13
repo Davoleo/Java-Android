@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools" package="net.davoleo.java_android">
+          xmlns:tools="http://schemas.android.com/tools"
+          package="net.davoleo.java_android">
 
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
@@ -13,8 +14,13 @@
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme" tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".randomizer.Randomizer" android:screenOrientation="portrait">
+            android:theme="@style/AppTheme"
+            tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".fragment.FragmentActivityExample">
+        </activity>
+        <activity
+                android:name=".randomizer.Randomizer"
+                android:screenOrientation="portrait">
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -31,7 +37,7 @@
         <activity
                 android:name=".geo_genius.GeoGeniusHome"
                 android:label="@string/title_activity_geo_genius_home"
-                android:parentActivityName=".MainActivity"><!-- Sets the Activity the back button on the appBar points to -->
+                android:parentActivityName=".MainActivity"> <!-- Sets the Activity the back button on the appBar points to -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
