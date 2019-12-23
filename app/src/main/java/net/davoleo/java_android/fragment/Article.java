@@ -79,6 +79,12 @@ public class Article extends Fragment {
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        editText.setText("");
+    }
+
     public interface OnMessageReadListener {
 
         void onMessageRead(String message);

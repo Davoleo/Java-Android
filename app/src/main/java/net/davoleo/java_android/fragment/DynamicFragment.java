@@ -5,9 +5,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import net.davoleo.java_android.R;
 
 public class DynamicFragment extends Fragment {
+
+    private TextView messageView;
 
     public DynamicFragment() {
         // Required empty public constructor
@@ -17,6 +20,16 @@ public class DynamicFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dynamic, container, false);
+        View view = inflater.inflate(R.layout.fragment_dynamic, container, false);
+
+        if (getArguments() != null) {
+
+            messageView = view.findViewById(R.id.fragmentDisplay);
+            Bundle bundle = getArguments();
+            String message = bundle.getString("message");
+            messageView.setText(message);
+        }
+
+        return view;
     }
 }

@@ -10,6 +10,7 @@ package net.davoleo.java_android.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 import net.davoleo.java_android.R;
@@ -39,6 +40,15 @@ public class FragmentActivityExample extends AppCompatActivity implements Articl
         preToast.show();
 
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+
+        DynamicFragment dynamicFragment = new DynamicFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("message", message);
+        dynamicFragment.setArguments(bundle);
+
+        FragmentTransaction fragmentTransaction = manager.beginTransaction().replace(R.id.fragmentContainer, dynamicFragment, null);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
 
     }
 }
