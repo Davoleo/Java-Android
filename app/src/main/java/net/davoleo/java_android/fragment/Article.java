@@ -38,6 +38,7 @@ public class Article extends Fragment {
                 FragmentActivityExample.manager
                         .beginTransaction()
                         .replace(R.id.fragmentContainer, new DynamicFragment(), null)
+                        .addToBackStack(null)   //Allows backwards navigation
                         .commit();
             }
         });
