@@ -15,13 +15,33 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import net.davoleo.java_android.R;
 
 public class Article extends Fragment {
 
+    private Button button;
+
+    public Article() {
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_article, container, false);
+        View view = inflater.inflate(R.layout.fragment_article, container, false);
+
+        button = view.findViewById(R.id.buttonFragment);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentActivityExample.manager
+                        .beginTransaction()
+                        .replace(R.id.fragmentContainer, new DynamicFragment(), null)
+                        .commit();
+            }
+        });
+
+        return view;
     }
 }

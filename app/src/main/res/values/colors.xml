@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#303f9f</color>
     <color name="colorAccent">#FF4081</color>
     <color name="darkAqua">#3e86a0</color>
+
+    <color name="homeColor">#009688</color>
+    <color name="firstFragmentColor">#00BCD4</color>
+    <color name="secondFragmentColor">#CDDC39</color>
 </resources>
