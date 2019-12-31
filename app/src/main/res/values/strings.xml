@@ -36,4 +36,10 @@
     <string name="rand_copy_num">Copy Number</string>
     <string name="rand_copy_color">Copy Color Code</string>
     <string name="fragment_activity_title">Fragment Test</string>
+
+<!--  Shared Preference API Test  -->
+    <string name="rivers_key">Fiumi@reallybelli</string>
+
+    <string name="key_preference">net.davoleo.java_android.key_preference</string>
+    <string name="key_status_preference">net.davoleo.java_android.key_status_preference</string>
 </resources>

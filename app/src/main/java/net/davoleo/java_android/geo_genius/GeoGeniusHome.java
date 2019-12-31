@@ -9,18 +9,26 @@ import android.provider.ContactsContract;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 import net.davoleo.java_android.R;
 import net.davoleo.java_android.geo_genius.sections.Capitals;
 import net.davoleo.java_android.geo_genius.sections.Rivers;
+import net.davoleo.java_android.util.SharedPreferencesConfig;
 
 public class GeoGeniusHome extends AppCompatActivity implements View.OnLongClickListener {
 
     private String user;
+
+    private SharedPreferencesConfig preferencesConfig;
+    private EditText riverKey;
+
+    public static final String TAG = "GeoGenius";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,6 +45,8 @@ public class GeoGeniusHome extends AppCompatActivity implements View.OnLongClick
         (findViewById(R.id.mapView)).setOnLongClickListener(this);
         (findViewById(R.id.buttonCapitals)).setOnLongClickListener(this);
 
+        preferencesConfig = new SharedPreferencesConfig(getApplicationContext());
+        riverKey = findViewById(R.id.riverKeyTextbox);
     }
 
     public void onSectionButtonClick(View v)
@@ -112,9 +122,19 @@ public class GeoGeniusHome extends AppCompatActivity implements View.OnLongClick
                 break;
             case R.id.action_rivers:
             case R.id.buttonRivers:
-                Intent intentRivers = new Intent(this, Rivers.class);
-                intentRivers.putExtras(b);
-                startActivity(intentRivers);
+                String keyRiver = riverKey.getText().toString();
+                boolean status = preferencesConfig.readRiverKeyStatus();
+                Log.i(TAG, "startSection: pre-status value: " + status);
+
+                if (status || keyRiver.equals(getResources().getString(R.string.rivers_key))) {
+                    Intent intentRivers = new Intent(this, Rivers.class);
+                    intentRivers.putExtras(b);
+                    startActivity(intentRivers);
+                    preferencesConfig.writeRiverKeyStatus(true);
+                } else {
+                    Toast.makeText(this, "Wrong Key Dude, Wrong Key....",  Toast.LENGTH_LONG).show();
+                    riverKey.setText("");
+                }
                 break;
             case R.id.action_lakes:
                 break;
