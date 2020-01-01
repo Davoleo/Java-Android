@@ -26,6 +26,11 @@
             android:layout_height="63dp" android:id="@+id/button_fragment" android:onClick="startFragmentTest"
             android:text="@string/fragment_activity_title"
     />
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="63dp" android:id="@+id/button_sqlite" android:onClick="startSQLTest"
+            android:text="@string/sqlite_activity_title"
+    />
     <TextView
             android:text="Hello World!"
             android:layout_width="match_parent"

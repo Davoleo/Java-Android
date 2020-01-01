@@ -16,6 +16,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="io.github.davoleo.javandroid.sqlitetest.SQLiteHome">
+        </activity>
         <activity android:name="io.github.davoleo.javandroid.fragment.FragmentActivityExample">
         </activity>
         <activity
