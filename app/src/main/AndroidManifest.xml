@@ -16,13 +16,13 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".fragment.FragmentActivityExample">
+        <activity android:name="io.github.davoleo.javandroid.fragment.FragmentActivityExample">
         </activity>
         <activity
-                android:name=".randomizer.Randomizer"
+                android:name="io.github.davoleo.javandroid.randomizer.Randomizer"
                 android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name="io.github.davoleo.javandroid.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -30,14 +30,14 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".geo_genius.GeoGeniusLogin"
+                android:name="io.github.davoleo.javandroid.geo_genius.GeoGeniusLogin"
                 android:label="@string/title_activity_geo_genius"
-                android:parentActivityName=".MainActivity">
+                android:parentActivityName="io.github.davoleo.javandroid.MainActivity">
         </activity>
         <activity
-                android:name=".geo_genius.GeoGeniusHome"
+                android:name="io.github.davoleo.javandroid.geo_genius.GeoGeniusHome"
                 android:label="@string/title_activity_geo_genius_home"
-                android:parentActivityName=".MainActivity"> <!-- Sets the Activity the back button on the appBar points to -->
+                android:parentActivityName="io.github.davoleo.javandroid.MainActivity"> <!-- Sets the Activity the back button on the appBar points to -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -45,14 +45,14 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".geo_genius.sections.Capitals"
+                android:name="io.github.davoleo.javandroid.geo_genius.sections.Capitals"
                 android:label="@string/title_activity_capitals">
         </activity>
         <activity
-                android:name=".geo_genius.sections.Rivers"
+                android:name="io.github.davoleo.javandroid.geo_genius.sections.Rivers"
                 android:label="@string/title_activity_rivers">
         </activity>
-        <activity android:name=".geo_genius.ActivityContactList">
+        <activity android:name="io.github.davoleo.javandroid.geo_genius.ActivityContactList">
         </activity>
     </application>
 

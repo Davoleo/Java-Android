@@ -1,4 +1,4 @@
-package net.davoleo.java_android.fragment;
+package io.github.davoleo.javandroid.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

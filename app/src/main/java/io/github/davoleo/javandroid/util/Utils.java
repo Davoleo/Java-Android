@@ -1,4 +1,4 @@
-package net.davoleo.java_android.util;
+package io.github.davoleo.javandroid.util;
 
 /*************************************************
  * Author: Davoleo

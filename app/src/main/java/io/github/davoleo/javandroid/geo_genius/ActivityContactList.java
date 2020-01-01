@@ -1,4 +1,4 @@
-package net.davoleo.java_android.geo_genius;
+package io.github.davoleo.javandroid.geo_genius;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

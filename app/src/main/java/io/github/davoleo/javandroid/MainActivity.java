@@ -1,12 +1,13 @@
-package net.davoleo.java_android;
+package io.github.davoleo.javandroid;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import net.davoleo.java_android.fragment.FragmentActivityExample;
-import net.davoleo.java_android.geo_genius.GeoGeniusLogin;
-import net.davoleo.java_android.randomizer.Randomizer;
+import io.github.davoleo.javandroid.fragment.FragmentActivityExample;
+import io.github.davoleo.javandroid.geo_genius.GeoGeniusLogin;
+import io.github.davoleo.javandroid.randomizer.Randomizer;
+import net.davoleo.java_android.R;
 
 public class MainActivity extends AppCompatActivity {
 

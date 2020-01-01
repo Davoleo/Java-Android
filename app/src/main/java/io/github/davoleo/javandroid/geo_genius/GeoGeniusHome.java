@@ -1,4 +1,4 @@
-package net.davoleo.java_android.geo_genius;
+package io.github.davoleo.javandroid.geo_genius;
 
 import android.Manifest;
 import android.content.Intent;
@@ -17,9 +17,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 import net.davoleo.java_android.R;
-import net.davoleo.java_android.geo_genius.sections.Capitals;
-import net.davoleo.java_android.geo_genius.sections.Rivers;
-import net.davoleo.java_android.util.SharedPreferencesConfig;
+import io.github.davoleo.javandroid.geo_genius.sections.Capitals;
+import io.github.davoleo.javandroid.geo_genius.sections.Rivers;
+import io.github.davoleo.javandroid.util.SharedPreferencesConfig;
 
 public class GeoGeniusHome extends AppCompatActivity implements View.OnLongClickListener {
 

@@ -6,7 +6,7 @@
  * Copyright - © - Davoleo - 2019
  * ----------------------------------- */
 
-package net.davoleo.java_android.fragment;
+package io.github.davoleo.javandroid.fragment;
 
 import android.app.Activity;
 import android.content.Context;

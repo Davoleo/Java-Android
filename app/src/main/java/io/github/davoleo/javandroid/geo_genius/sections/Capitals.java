@@ -1,4 +1,4 @@
-package net.davoleo.java_android.geo_genius.sections;
+package io.github.davoleo.javandroid.geo_genius.sections;
 
 import android.app.Activity;
 import android.os.Bundle;

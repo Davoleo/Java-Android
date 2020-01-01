@@ -1,4 +1,4 @@
-package net.davoleo.java_android;
+package io.github.davoleo.javandroid;
 
 import org.junit.Test;
 

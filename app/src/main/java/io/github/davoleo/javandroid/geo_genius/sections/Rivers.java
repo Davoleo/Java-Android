@@ -1,10 +1,10 @@
-package net.davoleo.java_android.geo_genius.sections;
+package io.github.davoleo.javandroid.geo_genius.sections;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import net.davoleo.java_android.R;
-import net.davoleo.java_android.util.SharedPreferencesConfig;
+import io.github.davoleo.javandroid.util.SharedPreferencesConfig;
 
 public class Rivers extends Activity {
 

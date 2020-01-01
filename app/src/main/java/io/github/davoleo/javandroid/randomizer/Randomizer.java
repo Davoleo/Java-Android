@@ -1,4 +1,4 @@
-package net.davoleo.java_android.randomizer;
+package io.github.davoleo.javandroid.randomizer;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 import net.davoleo.java_android.R;
-import net.davoleo.java_android.util.Utils;
+import io.github.davoleo.javandroid.util.Utils;
 
 import java.util.Random;
 

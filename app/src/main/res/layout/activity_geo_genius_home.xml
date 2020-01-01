@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".geo_genius.GeoGeniusHome">
+        tools:context="io.github.davoleo.javandroid.geo_genius.GeoGeniusHome">
 
     <ImageView
             android:src="@mipmap/world_map"

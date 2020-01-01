@@ -6,7 +6,7 @@
  * Copyright - © - Davoleo - 2019
  * ----------------------------------- */
 
-package net.davoleo.java_android.util;
+package io.github.davoleo.javandroid.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;

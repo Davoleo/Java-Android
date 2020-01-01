@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".geo_genius.sections.Rivers" android:gravity="top|center_vertical|center"
+        tools:context="io.github.davoleo.javandroid.geo_genius.sections.Rivers" android:gravity="top|center_vertical|center"
         android:orientation="vertical">
 
     <TextView
