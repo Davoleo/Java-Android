@@ -43,7 +43,4 @@
     <string name="key_preference">net.davoleo.java_android.key_preference</string>
     <string name="key_status_preference">net.davoleo.java_android.key_status_preference</string>
     <string name="sqlite_activity_title">SQLite Test</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
