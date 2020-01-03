@@ -8,6 +8,7 @@
 
 package io.github.davoleo.javandroid.sqlitetest;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -27,7 +28,7 @@ public class ContactDBHelper extends SQLiteOpenHelper {
 
     public ContactDBHelper(@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSION);
-        Log.d("Database Operations: ", "DB Created!");
+        //Log.d("Database Operations: ", "DB Created!");
     }
 
     @Override
@@ -40,5 +41,16 @@ public class ContactDBHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL(DROP_TABLE);
         onCreate(db);
+    }
+
+    public void addContact(int id, String name, String email, SQLiteDatabase database) {
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(ContactContract.ContactEntry.CONTACT_ID, id);
+        contentValues.put(ContactContract.ContactEntry.NAME, name);
+        contentValues.put(ContactContract.ContactEntry.EMAIL, email);
+
+        database.insert(ContactContract.ContactEntry.TABLE_NAME, null, contentValues);
+        Log.d("Database Operations", "1 Row added to the database!");
     }
 }

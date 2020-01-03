@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context="io.github.davoleo.javandroid.sqlitetest.fragments.DatabaseHome"
+              android:orientation="vertical">
+
+    <Button
+            android:text="Add Contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/btnAddContact" android:layout_weight="0"
+            android:layout_marginTop="20dp" android:layout_marginLeft="30dp" android:layout_marginRight="30dp"/>
+
+    <Button
+            android:text="View Contacts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/btnViewContacts" android:layout_weight="0"
+            android:layout_marginTop="20dp" android:layout_marginLeft="30dp" android:layout_marginRight="30dp"/>
+
+    <Button
+            android:text="Update Contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/btnUpdateContact" android:layout_weight="0"
+            android:layout_marginTop="20dp" android:layout_marginLeft="30dp" android:layout_marginRight="30dp"/>
+
+    <Button
+            android:text="Remove Contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/btnRemoveContact" android:layout_weight="0"
+            android:layout_marginTop="20dp" android:layout_marginLeft="30dp" android:layout_marginRight="30dp"/>
+</LinearLayout>
