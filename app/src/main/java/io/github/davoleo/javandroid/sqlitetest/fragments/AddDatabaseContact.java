@@ -44,7 +44,7 @@ public class AddDatabaseContact extends Fragment {
             @Override
             public void onClick(View v) {
                 String id = textboxID.getText().toString();
-                String name = textboxID.getText().toString();
+                String name = textboxName.getText().toString();
                 String email = textboxEmail.getText().toString();
 
                 //Normally Database tasks should be put in another background thread through an AsyncTask (not on the main one where they might cause UI Freeze)

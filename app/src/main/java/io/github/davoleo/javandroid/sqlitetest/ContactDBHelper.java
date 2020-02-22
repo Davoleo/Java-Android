@@ -10,6 +10,7 @@ package io.github.davoleo.javandroid.sqlitetest;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.Nullable;
@@ -52,5 +53,16 @@ public class ContactDBHelper extends SQLiteOpenHelper {
 
         database.insert(ContactContract.ContactEntry.TABLE_NAME, null, contentValues);
         Log.d("Database Operations", "1 Row added to the database!");
+    }
+
+    public Cursor readContacts(SQLiteDatabase database) {
+        String[] columnsToRead = {
+                ContactContract.ContactEntry.CONTACT_ID,
+                ContactContract.ContactEntry.NAME,
+                ContactContract.ContactEntry.EMAIL
+        };
+
+        return database.query(ContactContract.ContactEntry.TABLE_NAME, columnsToRead,
+                null, null, null, null, null);
     }
 }
