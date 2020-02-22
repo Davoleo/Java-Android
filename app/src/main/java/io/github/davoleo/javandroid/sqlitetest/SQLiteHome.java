@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import io.github.davoleo.javandroid.sqlitetest.fragments.AddDatabaseContact;
 import io.github.davoleo.javandroid.sqlitetest.fragments.DatabaseHome;
 import io.github.davoleo.javandroid.sqlitetest.fragments.ReadDatabaseContacts;
+import io.github.davoleo.javandroid.sqlitetest.fragments.UpdateDatabaseContact;
 import net.davoleo.java_android.R;
 
 public class SQLiteHome extends AppCompatActivity implements DatabaseHome.OnDatabaseOperationListener {
@@ -37,6 +38,13 @@ public class SQLiteHome extends AppCompatActivity implements DatabaseHome.OnData
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.dbFragmentContainer, new ReadDatabaseContacts())
+                        .addToBackStack(null)
+                        .commit();
+                break;
+            case 2:
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.dbFragmentContainer, new UpdateDatabaseContact())
                         .addToBackStack(null)
                         .commit();
                 break;
