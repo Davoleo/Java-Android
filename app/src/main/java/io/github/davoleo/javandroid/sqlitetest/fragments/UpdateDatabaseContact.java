@@ -45,6 +45,9 @@ public class UpdateDatabaseContact extends Fragment {
     }
 
     private void updateContact() {
+        if (txbID.getText().toString().isEmpty())
+            return;
+
         int id = Integer.parseInt(txbID.getText().toString());
         String name = txbName.getText().toString();
         String email = txbEmail.getText().toString();

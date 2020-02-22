@@ -43,24 +43,31 @@ public class AddDatabaseContact extends Fragment {
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String id = textboxID.getText().toString();
-                String name = textboxName.getText().toString();
-                String email = textboxEmail.getText().toString();
-
-                //Normally Database tasks should be put in another background thread through an AsyncTask (not on the main one where they might cause UI Freeze)
-                ContactDBHelper contactDBHelper = new ContactDBHelper(getActivity());
-                SQLiteDatabase database = contactDBHelper.getWritableDatabase();
-                contactDBHelper.addContact(Integer.parseInt(id), name, email, database);
-                contactDBHelper.close();
-
-                textboxID.setText("");
-                textboxName.setText("");
-                textboxEmail.setText("");
-                Toast.makeText(getActivity(), "Contact added to the database successfully!", Toast.LENGTH_LONG).show();
+                addNewContact();
             }
         });
 
         return view;
+    }
+
+    private void addNewContact() {
+        String id = textboxID.getText().toString();
+        String name = textboxName.getText().toString();
+        String email = textboxEmail.getText().toString();
+
+        if (id.isEmpty() || name.isEmpty() || email.isEmpty())
+            return;
+
+        //Normally Database tasks should be put in another background thread through an AsyncTask (not on the main one where they might cause UI Freeze)
+        ContactDBHelper contactDBHelper = new ContactDBHelper(getActivity());
+        SQLiteDatabase database = contactDBHelper.getWritableDatabase();
+        contactDBHelper.addContact(Integer.parseInt(id), name, email, database);
+        contactDBHelper.close();
+
+        textboxID.setText("");
+        textboxName.setText("");
+        textboxEmail.setText("");
+        Toast.makeText(getActivity(), "Contact added to the database successfully!", Toast.LENGTH_LONG).show();
     }
 
 }

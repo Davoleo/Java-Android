@@ -34,10 +34,7 @@ public class DeleteDatabaseContact extends Fragment {
         buttonDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (txbID.getText().toString().isEmpty())
-                    return;
-
-                removeContact();
+                 removeContact();
             }
         });
 
@@ -45,6 +42,9 @@ public class DeleteDatabaseContact extends Fragment {
     }
 
     private void removeContact() {
+        if (txbID.getText().toString().isEmpty())
+            return;
+
         ContactDBHelper helper = new ContactDBHelper(getContext());
         SQLiteDatabase database = helper.getWritableDatabase();
 
