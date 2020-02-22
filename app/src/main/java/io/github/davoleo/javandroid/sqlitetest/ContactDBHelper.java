@@ -75,4 +75,10 @@ public class ContactDBHelper extends SQLiteOpenHelper {
         String sqlCondition = ContactContract.ContactEntry.CONTACT_ID + " = " + id;
         database.update(ContactContract.ContactEntry.TABLE_NAME, contentValues, sqlCondition, null);
     }
+
+    public void removeContact(int id, SQLiteDatabase database) {
+        String sqlCondition = ContactContract.ContactEntry.CONTACT_ID + " = " + id;
+
+        database.delete(ContactContract.ContactEntry.TABLE_NAME, sqlCondition, null);
+    }
 }

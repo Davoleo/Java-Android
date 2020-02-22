@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context="io.github.davoleo.javandroid.sqlitetest.fragments.DeleteDatabaseContact"
+              android:orientation="vertical" android:gravity="center_horizontal">
+    <TextView
+            android:text="Remove Contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/deleteContactTextTitle" android:textAlignment="center"
+            android:textStyle="bold" android:textSize="24sp" android:layout_marginTop="16dp"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/txbDeleteID" android:layout_marginStart="50dp" android:layout_marginEnd="50dp"
+            android:layout_marginTop="32dp" android:hint="Contact ID"/>
+    <Button
+            android:text="Delete Contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/buttonDeleteContact" android:layout_marginTop="32dp"
+    />
+</LinearLayout>

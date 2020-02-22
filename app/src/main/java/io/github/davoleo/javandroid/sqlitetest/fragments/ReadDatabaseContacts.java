@@ -14,9 +14,6 @@ import io.github.davoleo.javandroid.sqlitetest.ContactContract;
 import io.github.davoleo.javandroid.sqlitetest.ContactDBHelper;
 import net.davoleo.java_android.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class ReadDatabaseContacts extends Fragment {
 
     private TextView txbDisplay;

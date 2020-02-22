@@ -48,6 +48,9 @@ public class DatabaseHome extends Fragment implements View.OnClickListener {
         buttonUpdate = view.findViewById(R.id.btnUpdateContact);
         buttonUpdate.setOnClickListener(this);
 
+        buttonRemove = view.findViewById(R.id.btnRemoveContact);
+        buttonRemove.setOnClickListener(this);
+
         return view;
     }
 
@@ -77,6 +80,9 @@ public class DatabaseHome extends Fragment implements View.OnClickListener {
                 break;
             case R.id.btnUpdateContact:
                 databaseOperationListener.onDbOperationPerform(2);
+                break;
+            case R.id.btnRemoveContact:
+                databaseOperationListener.onDbOperationPerform(3);
                 break;
         }
     }

@@ -14,9 +14,6 @@ import android.widget.Toast;
 import io.github.davoleo.javandroid.sqlitetest.ContactDBHelper;
 import net.davoleo.java_android.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class UpdateDatabaseContact extends Fragment {
 
     private EditText txbID, txbName, txbEmail;
@@ -28,9 +25,8 @@ public class UpdateDatabaseContact extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_update_database_contact, container, false);
 
         txbID = view.findViewById(R.id.txbUpdateID);
