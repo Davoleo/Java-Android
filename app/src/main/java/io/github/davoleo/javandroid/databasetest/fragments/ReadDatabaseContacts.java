@@ -1,4 +1,4 @@
-package io.github.davoleo.javandroid.sqlitetest.fragments;
+package io.github.davoleo.javandroid.databasetest.fragments;
 
 
 import android.database.Cursor;
@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
-import io.github.davoleo.javandroid.sqlitetest.ContactContract;
-import io.github.davoleo.javandroid.sqlitetest.ContactDBHelper;
+import io.github.davoleo.javandroid.databasetest.ContactContract;
+import io.github.davoleo.javandroid.databasetest.ContactDBHelper;
 import net.davoleo.java_android.R;
 
 public class ReadDatabaseContacts extends Fragment {

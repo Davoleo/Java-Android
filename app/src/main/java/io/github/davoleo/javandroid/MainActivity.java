@@ -7,7 +7,7 @@ import android.view.View;
 import io.github.davoleo.javandroid.fragment.FragmentActivityExample;
 import io.github.davoleo.javandroid.geo_genius.GeoGeniusLogin;
 import io.github.davoleo.javandroid.randomizer.Randomizer;
-import io.github.davoleo.javandroid.sqlitetest.SQLiteHome;
+import io.github.davoleo.javandroid.databasetest.DBTestHome;
 import net.davoleo.java_android.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,6 +38,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startSQLTest(View view) {
-        startActivity(new Intent(this, SQLiteHome.class));
+        startActivity(new Intent(this, DBTestHome.class));
     }
 }

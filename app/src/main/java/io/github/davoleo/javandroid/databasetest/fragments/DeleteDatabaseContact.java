@@ -1,4 +1,4 @@
-package io.github.davoleo.javandroid.sqlitetest.fragments;
+package io.github.davoleo.javandroid.databasetest.fragments;
 
 
 import android.database.sqlite.SQLiteDatabase;
@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import io.github.davoleo.javandroid.sqlitetest.ContactDBHelper;
+import io.github.davoleo.javandroid.databasetest.ContactDBHelper;
 import net.davoleo.java_android.R;
 
 public class DeleteDatabaseContact extends Fragment {

@@ -1,4 +1,4 @@
-package io.github.davoleo.javandroid.sqlitetest.fragments;
+package io.github.davoleo.javandroid.databasetest.fragments;
 
 
 import android.app.Activity;

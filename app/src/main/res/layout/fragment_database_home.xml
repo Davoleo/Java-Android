@@ -2,7 +2,7 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              tools:context="io.github.davoleo.javandroid.sqlitetest.fragments.DatabaseHome"
+              tools:context="io.github.davoleo.javandroid.databasetest.fragments.DatabaseHome"
               android:orientation="vertical">
 
     <Button

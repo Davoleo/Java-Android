@@ -1,11 +1,11 @@
-package io.github.davoleo.javandroid.sqlitetest;
+package io.github.davoleo.javandroid.databasetest;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import io.github.davoleo.javandroid.sqlitetest.fragments.*;
+import io.github.davoleo.javandroid.databasetest.fragments.*;
 import net.davoleo.java_android.R;
 
-public class SQLiteHome extends AppCompatActivity implements DatabaseHome.OnDatabaseOperationListener {
+public class DBTestHome extends AppCompatActivity implements DatabaseHome.OnDatabaseOperationListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

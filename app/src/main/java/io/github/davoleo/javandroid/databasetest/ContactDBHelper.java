@@ -6,7 +6,7 @@
  * Copyright - © - Davoleo - 2020
  * ----------------------------------- */
 
-package io.github.davoleo.javandroid.sqlitetest;
+package io.github.davoleo.javandroid.databasetest;
 
 import android.content.ContentValues;
 import android.content.Context;

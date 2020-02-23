@@ -3,7 +3,7 @@
                                              xmlns:tools="http://schemas.android.com/tools"
                                              android:layout_width="match_parent"
                                              android:layout_height="match_parent"
-                                             tools:context="io.github.davoleo.javandroid.sqlitetest.fragments.UpdateDatabaseContact"
+                                             tools:context="io.github.davoleo.javandroid.databasetest.fragments.UpdateDatabaseContact"
                                              android:id="@+id/frameLayout">
 
     <EditText
