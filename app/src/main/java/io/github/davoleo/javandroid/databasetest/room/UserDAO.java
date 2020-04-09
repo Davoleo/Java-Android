@@ -9,6 +9,7 @@
 package io.github.davoleo.javandroid.databasetest.room;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
@@ -22,5 +23,8 @@ public interface UserDAO {
 
     @Query("SELECT * FROM users")
     List<User> getUsers();
+
+    @Delete
+    void removeUser(User user);
 
 }

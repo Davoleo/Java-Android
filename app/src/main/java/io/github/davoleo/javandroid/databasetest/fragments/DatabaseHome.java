@@ -64,6 +64,9 @@ public class DatabaseHome extends Fragment implements View.OnClickListener {
         buttonRoomView = view.findViewById(R.id.btnViewUsers);
         buttonRoomView.setOnClickListener(this);
 
+        buttonRoomRemove = view.findViewById(R.id.btnRemoveUser);
+        buttonRoomRemove.setOnClickListener(this);
+
         return view;
     }
 
@@ -106,6 +109,11 @@ public class DatabaseHome extends Fragment implements View.OnClickListener {
             case R.id.btnViewUsers:
                 DBTestHome.fragmentManager.beginTransaction()
                         .replace(R.id.dbFragmentContainer, new ReadRoomUsers())
+                        .addToBackStack(null).commit();
+                break;
+            case R.id.btnRemoveUser:
+                DBTestHome.fragmentManager.beginTransaction()
+                        .replace(R.id.dbFragmentContainer, new DeleteRoomUser())
                         .addToBackStack(null).commit();
                 break;
         }
