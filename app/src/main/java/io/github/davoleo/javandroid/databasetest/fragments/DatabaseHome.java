@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.Button;
+import io.github.davoleo.javandroid.MainActivity;
+import io.github.davoleo.javandroid.databasetest.DBTestHome;
 import net.davoleo.java_android.R;
 
 /**
@@ -17,10 +19,15 @@ import net.davoleo.java_android.R;
  */
 public class DatabaseHome extends Fragment implements View.OnClickListener {
 
-    private Button buttonSave;
+    private Button buttonAdd;
     private Button buttonView;
     private Button buttonUpdate;
     private Button buttonRemove;
+
+    private Button buttonRoomAdd;
+    private Button buttonRoomView;
+    private Button buttonRoomUpdate;
+    private Button buttonRoomRemove;
 
     private OnDatabaseOperationListener databaseOperationListener;
 
@@ -39,8 +46,8 @@ public class DatabaseHome extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_database_home, container, false);
 
-        buttonSave = view.findViewById(R.id.btnAddContact);
-        buttonSave.setOnClickListener(this);
+        buttonAdd = view.findViewById(R.id.btnAddContact);
+        buttonAdd.setOnClickListener(this);
 
         buttonView = view.findViewById(R.id.btnViewContacts);
         buttonView.setOnClickListener(this);
@@ -50,6 +57,9 @@ public class DatabaseHome extends Fragment implements View.OnClickListener {
 
         buttonRemove = view.findViewById(R.id.btnRemoveContact);
         buttonRemove.setOnClickListener(this);
+
+        buttonRoomAdd = view.findViewById(R.id.btnAddUser);
+        buttonRoomAdd.setOnClickListener(this);
 
         return view;
     }
@@ -83,6 +93,12 @@ public class DatabaseHome extends Fragment implements View.OnClickListener {
                 break;
             case R.id.btnRemoveContact:
                 databaseOperationListener.onDbOperationPerform(3);
+                break;
+
+            case R.id.btnAddUser:
+                DBTestHome.fragmentManager.beginTransaction()
+                        .replace(R.id.dbFragmentContainer, new AddRoomUser())
+                        .addToBackStack(null).commit();
                 break;
         }
     }

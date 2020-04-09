@@ -5,6 +5,12 @@
               tools:context="io.github.davoleo.javandroid.databasetest.fragments.DatabaseHome"
               android:orientation="vertical">
 
+    <TextView
+            android:text="SQLite Database"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/sqliteTitleLabel" android:layout_weight="0"
+            android:textAlignment="center" android:textSize="24sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" android:textStyle="bold"/>
     <Button
             android:text="Add Contact"
             android:layout_width="match_parent"
@@ -27,5 +33,35 @@
             android:text="Remove Contact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/btnRemoveContact" android:layout_weight="0"
+            android:layout_marginTop="20dp" android:layout_marginLeft="30dp" android:layout_marginRight="30dp"/>
+    <TextView
+            android:text="Room Database"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/roomDBTitleLabel" android:layout_weight="0"
+            android:textAlignment="center" android:textSize="24sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" android:textStyle="bold"
+            android:layout_marginTop="30dp"/>
+    <Button
+            android:text="Add User"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/btnAddUser" android:layout_weight="0"
+            android:layout_marginTop="20dp" android:layout_marginLeft="30dp" android:layout_marginRight="30dp"/>
+
+    <Button
+            android:text="View Users"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/btnViewUsers" android:layout_weight="0"
+            android:layout_marginTop="20dp" android:layout_marginLeft="30dp" android:layout_marginRight="30dp"/>
+
+    <Button
+            android:text="Update User"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/btnUpdateUser" android:layout_weight="0"
+            android:layout_marginTop="20dp" android:layout_marginLeft="30dp" android:layout_marginRight="30dp"/>
+
+    <Button
+            android:text="Remove User"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/btnRemoveUser" android:layout_weight="0"
             android:layout_marginTop="20dp" android:layout_marginLeft="30dp" android:layout_marginRight="30dp"/>
 </LinearLayout>

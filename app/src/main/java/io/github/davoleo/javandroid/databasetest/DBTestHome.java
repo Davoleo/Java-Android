@@ -1,22 +1,32 @@
 package io.github.davoleo.javandroid.databasetest;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+import androidx.room.Room;
 import io.github.davoleo.javandroid.databasetest.fragments.*;
+import io.github.davoleo.javandroid.databasetest.room.UserRoomDatabase;
 import net.davoleo.java_android.R;
 
 public class DBTestHome extends AppCompatActivity implements DatabaseHome.OnDatabaseOperationListener {
+
+    public static FragmentManager fragmentManager;
+
+    public static UserRoomDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sqlite_home);
 
+        database = Room.databaseBuilder(getApplicationContext(), UserRoomDatabase.class, "userDB").allowMainThreadQueries().build();
+
         if (findViewById(R.id.dbFragmentContainer) == null || savedInstanceState != null)
             return;
 
         DatabaseHome homeFragment = new DatabaseHome();
-        getSupportFragmentManager().beginTransaction().add(R.id.dbFragmentContainer, homeFragment).commit();
+        fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().add(R.id.dbFragmentContainer, homeFragment).commit();
     }
 
     @Override
