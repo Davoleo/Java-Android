@@ -1,8 +1,8 @@
 package io.github.davoleo.javandroid.databasetest;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 import io.github.davoleo.javandroid.databasetest.fragments.*;
 import io.github.davoleo.javandroid.databasetest.room.UserRoomDatabase;

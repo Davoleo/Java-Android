@@ -4,13 +4,12 @@ package io.github.davoleo.javandroid.databasetest.fragments;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.Button;
-import io.github.davoleo.javandroid.MainActivity;
 import io.github.davoleo.javandroid.databasetest.DBTestHome;
 import net.davoleo.java_android.R;
 

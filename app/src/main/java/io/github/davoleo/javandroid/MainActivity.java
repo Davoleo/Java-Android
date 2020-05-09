@@ -2,7 +2,7 @@ package io.github.davoleo.javandroid;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import io.github.davoleo.javandroid.fragment.FragmentActivityExample;
 import io.github.davoleo.javandroid.geo_genius.GeoGeniusLogin;
