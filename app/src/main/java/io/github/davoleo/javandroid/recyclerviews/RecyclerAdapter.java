@@ -9,7 +9,9 @@
 package io.github.davoleo.javandroid.recyclerviews;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,6 +22,23 @@ import java.util.List;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.AndroidVersionViewHolder> {
 
     private List<String> versionList;
+    private int[] images = {
+            R.drawable.cupcake,
+            R.drawable.donut,
+            R.drawable.eclair,
+            R.drawable.froyo,
+            R.drawable.gingerbread,
+            R.drawable.honeycomb,
+            R.drawable.ice_cream_sandwich,
+            R.drawable.jelly_bean,
+            R.drawable.kitkat,
+            R.drawable.lollipop,
+            R.drawable.marshmallow,
+            R.drawable.nougat,
+            R.drawable.oreo,
+            R.drawable.pie,
+            R.drawable.q
+    };
 
     public RecyclerAdapter(List<String> versionList) {
         this.versionList = versionList;
@@ -30,14 +49,17 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Androi
     @Override
     public AndroidVersionViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        TextView textView = ((TextView) LayoutInflater.from(parent.getContext()).inflate(R.layout.android_versions_view_holder, parent, false));
+        View view = (LayoutInflater.from(parent.getContext()).inflate(R.layout.android_versions_view_holder, parent, false));
 
-        return new AndroidVersionViewHolder(textView);
+        return new AndroidVersionViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull AndroidVersionViewHolder holder, int position) {
-        holder.versionName.setText(versionList.get(position));
+        holder.title.setText(versionList.get(position));
+
+        int imageId = images[position];
+        holder.logo.setImageResource(imageId);
     }
 
     @Override
@@ -47,11 +69,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Androi
 
     public static class AndroidVersionViewHolder extends RecyclerView.ViewHolder {
 
-        TextView versionName;
+        TextView title;
+        ImageView logo;
 
-        public AndroidVersionViewHolder(@NonNull TextView itemView) {
+        public AndroidVersionViewHolder(@NonNull View itemView) {
             super(itemView);
-            versionName = itemView;
+            title = itemView.findViewById(R.id.androidVersionTextView);
+            logo = itemView.findViewById(R.id.androidVersionLogo);
         }
     }
 }
