@@ -34,7 +34,7 @@ public class RecyclerHome extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         list = Arrays.asList(getResources().getStringArray(R.array.android_verions));
-        adapter = new RecyclerAdapter(list);
+        adapter = new RecyclerAdapter(list, this);
         recyclerView.setAdapter(adapter);
 
         //Improve performances when it doesn't need to be dynamic depending on the count of items

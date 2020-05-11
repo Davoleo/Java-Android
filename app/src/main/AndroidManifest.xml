@@ -16,6 +16,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="io.github.davoleo.javandroid.recyclerviews.DisplayLogoActivity">
+        </activity>
         <activity android:name="io.github.davoleo.javandroid.recyclerviews.RecyclerHome">
         </activity>
         <activity android:name="io.github.davoleo.javandroid.databasetest.DBTestHome">

@@ -8,6 +8,8 @@
 
 package io.github.davoleo.javandroid.recyclerviews;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,8 +42,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Androi
             R.drawable.q
     };
 
-    public RecyclerAdapter(List<String> versionList) {
+    private Context context;
+
+    public RecyclerAdapter(List<String> versionList, Context context) {
         this.versionList = versionList;
+        this.context = context;
     }
 
     //Called to create each ViewHolder object of the RecyclerView
@@ -51,7 +56,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Androi
 
         View view = (LayoutInflater.from(parent.getContext()).inflate(R.layout.android_versions_view_holder, parent, false));
 
-        return new AndroidVersionViewHolder(view);
+        return new AndroidVersionViewHolder(view, context, images);
     }
 
     @Override
@@ -67,15 +72,29 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Androi
         return versionList.size();
     }
 
-    public static class AndroidVersionViewHolder extends RecyclerView.ViewHolder {
+    public static class AndroidVersionViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView title;
-        ImageView logo;
+        private TextView title;
+        private ImageView logo;
 
-        public AndroidVersionViewHolder(@NonNull View itemView) {
+        private Context context;
+        private int[] images;
+
+        public AndroidVersionViewHolder(@NonNull View itemView, Context context, int[] images) {
             super(itemView);
             title = itemView.findViewById(R.id.androidVersionTextView);
             logo = itemView.findViewById(R.id.androidVersionLogo);
+            itemView.setOnClickListener(this);
+
+            this.context = context;
+            this.images = images;
+        }
+
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(context, DisplayLogoActivity.class);
+            intent.putExtra("imageId", images[getAdapterPosition()]);
+            context.startActivity(intent);
         }
     }
 }
