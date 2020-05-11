@@ -16,6 +16,9 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="io.github.davoleo.javandroid.appbar.AppBarHome"
+                  android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity android:name="io.github.davoleo.javandroid.recyclerviews.DisplayLogoActivity">
         </activity>
         <activity android:name="io.github.davoleo.javandroid.recyclerviews.RecyclerHome">
@@ -26,7 +29,7 @@
         </activity>
         <activity
                 android:name="io.github.davoleo.javandroid.randomizer.Randomizer"
-                android:screenOrientation="portrait">
+                android:screenOrientation="fullSensor">
         </activity>
         <activity android:name="io.github.davoleo.javandroid.MainActivity">
             <intent-filter>

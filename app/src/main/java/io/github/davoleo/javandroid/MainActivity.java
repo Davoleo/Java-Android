@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
+import io.github.davoleo.javandroid.appbar.AppBarHome;
 import io.github.davoleo.javandroid.fragment.FragmentActivityExample;
 import io.github.davoleo.javandroid.geo_genius.GeoGeniusLogin;
 import io.github.davoleo.javandroid.randomizer.Randomizer;
@@ -44,5 +45,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void startRecyclerTest(View view) {
         startActivity(new Intent(this, RecyclerHome.class));
+    }
+
+    public void startAppBarTest(View view) {
+        startActivity(new Intent(this, AppBarHome.class));
     }
 }
