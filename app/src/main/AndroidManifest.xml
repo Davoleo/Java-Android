@@ -17,7 +17,8 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
         <activity android:name="io.github.davoleo.javandroid.appbar.AppBarHome"
-                  android:theme="@style/AppTheme.NoActionBar">
+                  android:theme="@style/AppTheme.NoActionBar"
+                  android:parentActivityName="io.github.davoleo.javandroid.MainActivity">
         </activity>
         <activity android:name="io.github.davoleo.javandroid.recyclerviews.DisplayLogoActivity">
         </activity>
