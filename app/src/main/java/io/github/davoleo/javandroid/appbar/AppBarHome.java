@@ -31,6 +31,24 @@ public class AppBarHome extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.custom_app_bar_menu, menu);
+
+        MenuItem.OnActionExpandListener actionExpandListener = new MenuItem.OnActionExpandListener() {
+            @Override
+            public boolean onMenuItemActionExpand(MenuItem item) {
+                Toast.makeText(AppBarHome.this, "The Search View has been expanded", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+
+            @Override
+            public boolean onMenuItemActionCollapse(MenuItem item) {
+                Toast.makeText(AppBarHome.this, "The Search View has been collapsed", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        };
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        searchItem.setOnActionExpandListener(actionExpandListener);
+
         return true;
     }
 
