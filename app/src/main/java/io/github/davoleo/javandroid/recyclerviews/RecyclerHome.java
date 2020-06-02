@@ -1,15 +1,19 @@
 package io.github.davoleo.javandroid.recyclerviews;
 
+import android.view.Menu;
+import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import net.davoleo.java_android.R;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class RecyclerHome extends AppCompatActivity {
+public class RecyclerHome extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
     //Recycler View Handler
     private RecyclerView recyclerView;
@@ -40,5 +44,33 @@ public class RecyclerHome extends AppCompatActivity {
         //Improve performances when it doesn't need to be dynamic depending on the count of items
         recyclerView.setHasFixedSize(true);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.recycler_search_menu, menu);
+        MenuItem menuItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+        searchView.setOnQueryTextListener(this);
+        return true;
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        String userInput = newText.toLowerCase();
+        List<String> filteredList = new ArrayList<>();
+        for (String version : list) {
+            if (version.toLowerCase().contains(userInput)) {
+                filteredList.add(version);
+            }
+        }
+
+        adapter.updateList(filteredList);
+        return true;
     }
 }

@@ -19,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import net.davoleo.java_android.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.AndroidVersionViewHolder> {
@@ -70,6 +71,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Androi
     @Override
     public int getItemCount() {
         return versionList.size();
+    }
+
+    public void updateList(List<String> updatedList) {
+        versionList = new ArrayList<>();
+        versionList.addAll(updatedList);
+        notifyDataSetChanged();
     }
 
     public static class AndroidVersionViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
