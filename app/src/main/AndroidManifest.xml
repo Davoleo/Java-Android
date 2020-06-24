@@ -56,7 +56,14 @@
         </activity>
         <activity
                 android:name="io.github.davoleo.javandroid.geo_genius.sections.Capitals"
-                android:label="@string/title_activity_capitals">
+                android:label="@string/title_activity_capitals"
+                android:permission="android.permission.READ_CONTACTS"
+        >
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <data android:mimeType="text/plain" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <activity
                 android:name="io.github.davoleo.javandroid.geo_genius.sections.Rivers"

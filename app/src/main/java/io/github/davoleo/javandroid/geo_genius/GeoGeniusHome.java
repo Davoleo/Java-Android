@@ -116,7 +116,9 @@ public class GeoGeniusHome extends AppCompatActivity implements View.OnLongClick
         {
             case R.id.action_capitals:
             case R.id.buttonCapitals:
-                Intent intentCapitals = new Intent(this, Capitals.class);
+                Intent intentCapitals = new Intent();
+                intentCapitals.setAction(Intent.ACTION_SEND);
+                intentCapitals.setType("text/plain");
                 intentCapitals.putExtras(b);
                 startActivity(intentCapitals);
                 break;
